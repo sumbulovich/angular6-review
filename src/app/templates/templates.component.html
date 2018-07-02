@@ -1,0 +1,25 @@
+<div class="component">
+  <h2>Templates</h2>
+  <ng-container *ngIf="booleanVar; else template1">
+    <p>This is hide if <span class="underline">*ngIf</span> is true</p>
+  </ng-container>
+  <ng-template #template1><p>This is gotten when <span class="underline">*ngIf</span> is false</p></ng-template>
+
+  <hr>
+
+  <ng-container *ngTemplateOutlet="template2"></ng-container>
+  <ng-template #template2><p>This is gotten with <span class="underline">*ngTemplateOutlet</span></p></ng-template>
+
+  <hr>
+
+  <ng-container *ngTemplateOutlet="template3; context: contextExp"></ng-container>
+  <ng-container *ngTemplateOutlet="template3; context: contextExp2"></ng-container>
+  <ng-template #template3 let-contextVar1 let-contextVar2="contextVal2" let-contextVar3="contextVal3">
+    <p>This is gotten with <span class="underline">ngTemplateOutletContext</span> with context values:</p>
+    <ul>
+      <li><em>let-contextVar1</em>: {{ contextVar1 }}</li>
+      <li *ngIf="contextVal2"><em>let-contextVar2</em>: {{ contextVar2 }}</li>
+      <li *ngIf="contextVal3"><em>let-contextVar3</em>: {{ contextVar3 }}</li>
+    </ul>
+  </ng-template>
+</div>

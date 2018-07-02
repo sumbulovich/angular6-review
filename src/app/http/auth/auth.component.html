@@ -1,0 +1,38 @@
+<div class="component">
+  <h3>Auth</h3>
+  <div class="container">
+    <div class="row" [ngClass]="{ 'disabled': isAuthenticated() }">
+      <div class="col-6">
+        <form (ngSubmit)="onSignin(signinForm)" #signinForm="ngForm">
+          <label>SignIn</label>
+          <div class="form-group">
+            <input type="email" name="email" class="form-control" placeholder="Email" [ngModel]="'test@test.com'"
+                   required ngModel>
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" class="form-control" placeholder="Password" [ngModel]="'testdata'"
+                   required ngModel>
+          </div>
+          <button class="btn btn-primary" type="submit" [disabled]="!signinForm.valid">Sign In</button>
+        </form>
+      </div>
+      <div class="col-6">
+        <form (ngSubmit)="onSignup(signupForm)" #signupForm="ngForm">
+          <label>SignUp</label>
+          <div class="form-group">
+            <input type="email" name="email" class="form-control" placeholder="Email" required ngModel>
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" class="form-control" placeholder="Password" required ngModel>
+          </div>
+          <button class="btn btn-primary" type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <div *ngIf="isAuthenticated()">
+      <br>
+      <p class="token"><strong>Token</strong>: {{getToken()}}</p>
+      <button class="btn btn-danger btn-block" (click)="onLogout()">Logout</button>
+    </div>
+  </div>
+</div>

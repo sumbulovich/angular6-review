@@ -1,0 +1,56 @@
+<div class="component">
+  <h3>Template Driving</h3>
+
+  <form (ngSubmit)="onSubmit()" #formRef="ngForm">
+    <div id="user-data"
+         ngModelGroup="userData"
+         #userData="ngModelGroup"
+    >
+      <div class="form-group">
+        <input type="text"
+               class="form-control"
+               name="username"
+               placeholder="username"
+               ngModel
+               required
+               [ngModel]="defaultValue"
+        >
+      </div>
+      <div class="form-group">
+        <input type="email"
+               class="form-control"
+               name="email"
+               placeholder="Email"
+               ngModel
+               required
+               #email="ngModel"
+        >
+        <small class="form-text text-muted" *ngIf="!email.valid && email.touched">Please enter a valid value!</small>
+      </div>
+      <div class="form-group">
+        <div *ngFor="let gender of genders">
+          <label>
+            <input type="radio"
+                   name="gender"
+                   ngModel
+                   [value]="gender"
+                   required
+            >
+            {{gender}}
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <textarea rows="3"
+                class="form-control"
+                name="questionAnswer"
+                [(ngModel)]="twoWayDataBinding"
+      ></textarea>
+      <p class="text-muted">Your reply: <em>{{twoWayDataBinding}}</em></p>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!formRef.valid">Submit</button>
+    <small class="text-danger" *ngIf="!userData.valid && userData.touched">User Data is invalid!</small>
+    <small class="text-success" *ngIf="submitted">Submitted</small>
+  </form>
+</div>

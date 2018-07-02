@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>app component</h1>
+  <p>This var is from <strong>child.component</strong> and called with <span class="underline">@ViewChild</span>: <em>{{outputVar}}</em></p>
+  <app-child [inputVar]="inputVar" (outputVar)="fn1($event)">
+    <p>This is the <em #localRef>ng-content</em> from <strong>child.component</strong></p>
+  </app-child>
+  <app-templates></app-templates>
+  <app-directives></app-directives>
+  <app-services></app-services>
+  <app-routing></app-routing>
+  <app-observables></app-observables>
+  <app-forms #contentChildRef></app-forms>
+  <app-pipes></app-pipes>
+  <app-http></app-http>
+  <app-animations></app-animations>
+  <app-elements></app-elements>
+</div>

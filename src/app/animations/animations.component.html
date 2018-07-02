@@ -1,0 +1,31 @@
+<div class="component">
+  <h2>Animations</h2>
+  <button class="btn btn-primary" (click)="onAnimate()">Animate!</button>
+  <button class="btn btn-primary" (click)="onShrink()">Shrink!</button>
+  <hr>
+  <div class="animated-div"
+       [@divState]="state"
+       (@divState.start)="animationStarted($event)"
+       (@divState.done)="animationEnded($event)"
+  ></div>
+  <br>
+  <div class="animated-div" [@wildState]="wildState"></div>
+  <hr>
+  <div class="row">
+    <div class="col-12">
+      <div class="input-group form-group">
+        <input type="text" #input>
+        <button class="btn btn-primary btn-sm" (click)="onAdd(input.value)">Add Item!</button>
+      </div>
+      <ul class="list-group" [@blockInitialRenderAnimation]>
+        <li
+          class="list-group-item"
+          (click)="onDelete(item)"
+          [@list1]
+          *ngFor="let item of list">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

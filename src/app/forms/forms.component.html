@@ -1,0 +1,13 @@
+<div class="component">
+  <h2>Forms</h2>
+  <div *ngIf="!contentChildRef; else forms">
+    <a routerLink="/forms/template-driving" routerLinkActive="active">Template Driving</a>,
+    <a routerLink="/forms/reactive" routerLinkActive="active">Reactive</a>,
+    <router-outlet></router-outlet>
+  </div>
+
+  <ng-template #forms>
+    <app-template-driving></app-template-driving>
+    <app-reactive></app-reactive>
+  </ng-template>
+</div>

@@ -1,0 +1,8 @@
+<div class="component">
+  <h2>Services</h2>
+
+  <label>Set @HostListener color by Servers with <span class="underline">EventEmitter</span> (Components Comunication):</label><br>
+  <input type="radio" name="color" [value]="'red'" [(ngModel)]="color" (change)="colorUpdate()"> Red <br>
+  <input type="radio" name="color" [value]="'yellow'" [(ngModel)]="color" (change)="colorUpdate()"> Yellow <br>
+  <input type="radio" name="color" [value]="'blue'" [(ngModel)]="color" (change)="colorUpdate()"> Blue
+</div>

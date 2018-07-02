@@ -1,0 +1,47 @@
+<div class="component">
+  <h3>Reactive</h3>
+
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="userData">
+      <div class="form-group">
+        <input type="text"
+               class="form-control"
+               placeholder="Name"
+               formControlName="username">
+        <small class="text-muted" *ngIf="!signupForm.get('userData.username').valid && signupForm.get('userData.username').touched">
+          <span *ngIf="signupForm.get('userData.username').errors['nameIsForbidden']">This is a forbidden name!</span>
+          <span *ngIf="signupForm.get('userData.username').errors['required']">This field is required!</span>
+        </small>
+      </div>
+      <div class="form-group">
+        <input type="email"
+               class="form-control"
+               placeholder="Email"
+               formControlName="email">
+        <small class="text-muted" *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched">Please, enter a valid email!</small>
+      </div>
+
+      <div class="form-group">
+        <div *ngFor="let gender of genders">
+          <label>
+            <input type="radio"
+                   name="gender"
+                   [value]="gender"
+                   formControlName="gender"
+            >
+            {{gender}}
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" formArrayName="hobbies">
+      <button type="button" class="btn btn-success btn-sm" (click)="onAddHobby()">+ Hobby</button>
+      <div class="form-group" *ngFor="let hobbyContol of hobbies.controls; let i = index">
+        <input type="text" class="form-control" [formControlName]="i">
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!signupForm.valid">Submit</button>
+    <small class="text-danger" *ngIf="!signupForm.get('userData').valid && signupForm.get('userData').touched">User Data is invalid!</small>
+    <small class="text-success" *ngIf="submitted">Submitted</small>
+  </form>
+</div>

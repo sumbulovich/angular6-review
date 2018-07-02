@@ -1,0 +1,6 @@
+<div class="component">
+  <h2>Pipes</h2>
+  <p>Default Pipes: <em>{{ today | date: 'fullDate' | uppercase }}</em></p>
+  <p>Custom Pipe: <em>{{ today | date: 'fullDate' | shorten:20 }}</em></p>
+  <p>Async Pipe: <em>{{ asyncVar | async }}</em></p>
+</div>

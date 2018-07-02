@@ -1,0 +1,9 @@
+.token {
+  font-size: 10px;
+  word-break: break-all;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: .5;
+}

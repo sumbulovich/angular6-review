@@ -1,0 +1,13 @@
+<div class="component">
+  <h2>Routing</h2>
+  <button class="btn btn-success" (click)="onLogIn()" *ngIf="!loggedIn">Login</button>
+  <button class="btn btn-danger" (click)="onLogOut()" *ngIf="loggedIn">Logout</button>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>,
+  <a routerLink="/templates" routerLinkActive="active">Templates</a>,
+  <a routerLink="/directives" routerLinkActive="active">Directives</a>,
+  <a routerLink="/observables" routerLinkActive="active">Observables</a>,
+  <a routerLink="/forms" routerLinkActive="active">Forms</a>,
+  <a routerLink="/XXXX" routerLinkActive="active">Error</a>
+  <!--<a (click)="linkToDirectives()">Directives</a>-->
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+.component {
+  border: 1px dashed lightgray;
+  padding: 20px;
+}
+
+.underline {
+  text-decoration: underline;
+}
