@@ -21,16 +21,6 @@ context.keys().map( context );
  */
 
 /**
- * Dummy Component
- */
-@Component( {
-	selector: 'app-dummy',
-	template: '',
-} )
-export class DummyComponent {
-}
-
-/**
  * Mock Component
  * Examples:
  * MockComponent({ selector: 'cranium' });
