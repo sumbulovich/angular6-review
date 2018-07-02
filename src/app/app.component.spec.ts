@@ -53,6 +53,9 @@ describe('App: CompleteGuideFinalWebpack', () => {
           selector: 'app-http'
         }),
         MockComponent( {
+            selector: 'app-animations'
+        }),
+        MockComponent( {
           selector: 'app-elements'
         }),
       ],

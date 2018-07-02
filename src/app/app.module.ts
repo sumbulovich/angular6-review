@@ -27,6 +27,7 @@ import { ElementsComponent } from './elements/elements.component';
 import { ChildElementComponent } from './elements/child-element/child-element.component';
 import { AnimationsComponent } from './animations/animations.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DummyComponent } from '../test';
 
 @NgModule( {
   declarations: [
@@ -49,6 +50,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AnimationsComponent,
     ElementsComponent,
     ChildElementComponent,
+    DummyComponent
   ],
   imports: [
     BrowserModule, // BrowserModule includes CommonModule with additional features only needed when application start
