@@ -17,10 +17,6 @@ const context = require.context( './', true, /\.spec\.ts$/ );
 context.keys().map( context );
 
 /**
- * CUSTOM EXPORTS
- */
-
-/**
  * Mock Component
  * Examples:
  * MockComponent({ selector: 'cranium' });
@@ -43,4 +39,3 @@ export function MockComponent( options: Component ): Component {
 
 	return Component( metadata )( <any>Mock );
 }
-
